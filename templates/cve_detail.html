@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>CVE Details</h2>
+<p><strong>ID:</strong> {{ cve.cve.id }}</p>
+<p><strong>Description:</strong> {{ cve.description }}</p>
+<p><strong>Published Date:</strong> {{ cve.publishedDate }}</p>
+<p><strong>Last Modified:</strong> {{ cve.lastModifiedDate }}</p>
+{% endblock %}

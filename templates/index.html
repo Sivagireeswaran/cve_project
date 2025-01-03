@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>CVE List</h2>
+<table>
+    <thead>
+        <tr>
+            <th>CVE ID</th>
+            <th>Published Date</th>
+            <th>Last Modified</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cve in cves %}
+        <tr onclick="location.href='/cves/{{ cve.cve.id }}'">
+            <td>{{ cve.cve.id }}</td>
+            <td>{{ cve.publishedDate }}</td>
+            <td>{{ cve.lastModifiedDate }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p>Total Records: {{ total_records }}</p>
+<p>
+    Results Per Page:
+    <a href="?resultsPerPage=10">10</a>
+    <a href="?resultsPerPage=50">50</a>
+    <a href="?resultsPerPage=100">100</a>
+</p>
+{% endblock %}
